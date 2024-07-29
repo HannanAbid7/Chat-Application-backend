@@ -29,7 +29,7 @@ app.use(cors());
 
 const io= new Server(server, {
     cors: {
-        origin:"http://localhost:3000",
+        origin:"https://chat-application-jqg7.onrender.com",
         methods:["GET","POST"],
     },
 });
@@ -76,6 +76,7 @@ io.on('connection', (socket) => {
   });
 
 
-server.listen(3001,()=>{
-    console.log("server running");
-});
+  const port = process.env.PORT || 3001;
+  server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
