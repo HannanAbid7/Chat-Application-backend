@@ -23,6 +23,10 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
 
 // Health check route
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.get('/health', (req, res) => {
   res.status(200).json({ message: 'Backend is running' });
 });
