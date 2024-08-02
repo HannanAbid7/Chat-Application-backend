@@ -18,7 +18,9 @@ mongoose.connect(mongoDB)
     console.error("Connection error:", error);
   });
 
-app.use(cors());
+  app.use(cors({
+    origin: 'https://66acfaba3cf2b46bd7b522d1--velvety-biscotti-4f3f09.netlify.app',
+  }));
 
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
 
@@ -33,7 +35,7 @@ app.get('/health', (req, res) => {
 
 const io = new Server(server, {
   cors: {
-    origin: "https://66acfaba3cf2b46bd7b522d1--velvety-biscotti-4f3f09.netlify.app/",
+    origin: "https://66acfaba3cf2b46bd7b522d1--velvety-biscotti-4f3f09.netlify.app",
     methods: ["GET", "POST"],
   },
 });
