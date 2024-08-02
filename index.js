@@ -33,7 +33,7 @@ app.get('/health', (req, res) => {
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-application-jqg7.onrender.com",
+    origin: "https://chat-application-backend-delta.vercel.app",
     methods: ["GET", "POST"],
   },
 });
