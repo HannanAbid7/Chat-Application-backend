@@ -33,7 +33,7 @@ app.get('/health', (req, res) => {
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-application-backend-delta.vercel.app",
+    origin: "https://66acfaba3cf2b46bd7b522d1--velvety-biscotti-4f3f09.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
